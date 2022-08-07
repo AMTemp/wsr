@@ -57,9 +57,9 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse<FormResponse>
         attachments: body.attachments
       }
 
-      sendgrid.send(data);
-
-      res.status(200).json({ message: 'Email sent' });
+      sendgrid.send(data).then(() => {
+        res.status(200).json({ message: 'Email sent' })
+      })
 
     } else {
       res.status(418).json({ code: 418, message: 'Missing email environment variable(s)' })
