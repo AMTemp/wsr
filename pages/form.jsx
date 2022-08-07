@@ -55,12 +55,13 @@ const Form = () => {
           disposition: 'attachment'
         }]
       }
+      console.log(form)
       fetch('/api/form', {
         method: 'POST',
         body: JSON.stringify(form)
       })
       .then((res) => {
-        router.reload('/form')
+        // router.reload('/form')
       })
       .catch((err) => alert('Error'))
     })
