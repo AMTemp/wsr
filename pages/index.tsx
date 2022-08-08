@@ -98,7 +98,6 @@ const Home: NextPage = () => {
       ) : (router.query?.item && openItem) ? (
 
         <main className="w-screen lg:w-10/12 mx-auto">
-          <h1>{router.query?.item}</h1>
           { openItem && (
             <div className="grid grid-cols-1 lg:grid-cols-2 p-20 gap-20">
               <div className="item-description order-last lg:order-first self-center p-5">
